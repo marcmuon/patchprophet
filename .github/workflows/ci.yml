@@ -17,8 +17,9 @@ jobs:
 
       - run: pip install hatch
       - run: hatch env create
+        working-directory: backend
       - run: hatch run mypy backend/src/patchprophet
-
+        working-directory: backend
       - run: |
           cd ui
           pnpm install --frozen-lockfile
