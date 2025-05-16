@@ -45,6 +45,7 @@ path = "src/patchprophet/__about__.py"
 dependencies = [
   "coverage[toml]>=6.5",
   "pytest",
+  "mypy>=1.0.0"
 ]
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
@@ -86,3 +87,6 @@ exclude_lines = [
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend/src/patchprophet"]
